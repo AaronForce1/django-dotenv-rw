@@ -39,8 +39,7 @@ Put the `dotenv.py` file in the same folder on your server as the `.env` file an
 ```
 @task
 def config(action=None,key=None,value=None):
-    command = env.django_path + "dotenv.py "
-    command += env.django_path + ".env "
+    command = "dotenv " + env.django_path + ".env "
     command += action + " " if action else ""
     command += key + " " if key else ""
     command += value + " " if value else ""
